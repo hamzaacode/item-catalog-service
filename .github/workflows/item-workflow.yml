@@ -1,9 +1,9 @@
-name: CI Workflow
+name: item-workflow Workflow
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
