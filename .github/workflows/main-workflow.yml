@@ -4,13 +4,9 @@ on:
   push:
     branches:
       - master
+
 jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: my-step
-        run: echo "Hello World!"
-  build-project:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,4 +23,3 @@ jobs:
 
       - name: Run tests
         run: ./mvnw test
-
