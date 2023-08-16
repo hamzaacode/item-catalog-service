@@ -43,9 +43,9 @@ jobs:
 
     - name: Build and push Docker image
       env:
-          IMAGE_NAME: hamza21/demo-app
+          IMAGE_NAME: demo-app
           TAG: latest-02
-      run: |
+      run:
           docker build -t $IMAGE_NAME .
           docker tag $IMAGE_NAME:$TAG $DOCKER_USERNAME/$IMAGE_NAME:$TAG
           docker push $DOCKER_USERNAME/$IMAGE_NAME:$TAG
