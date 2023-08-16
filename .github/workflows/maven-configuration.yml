@@ -35,13 +35,13 @@ jobs:
 
     - name: Run tests
       run: ./mvnw test
-    - name: Login to Docker Hub
+    - name: Login to GitHub Container Registry
       uses: docker/login-action@v1
       with:
+        registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-
-    - name: Build Docker Image
-      run: docker tag demo-app:lates-02 demo-app:latest-02
-    - name: Push Docker Image
-      run: docker push demo-app:latest-02
+    - name: Build the web-demo Docker image
+      run: |
+        docker build . --tag docker.io/hamza21/test-app:1.0
+        docker push docker.io/hamza21/test-app:1.0
