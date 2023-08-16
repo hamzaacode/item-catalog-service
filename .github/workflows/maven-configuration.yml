@@ -42,7 +42,6 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker Image
-      run: docker build -t hamza21/demo-app:latest-02
-
+      run: docker tag demo-app:lates-02 demo-app:latest-02
     - name: Push Docker Image
-      run: docker push hamza21/demo-app:latest-02
+      run: docker push demo-app:latest-02
